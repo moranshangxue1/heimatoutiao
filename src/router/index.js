@@ -1,15 +1,25 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 // import Home from '../views/Home.vue' // 路由级组件
 import Home from '../views/home/'
+import Login from '../views/login'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    component: Home
-  }
+export default new Router({
+  routes: [
+    {
+      path: '/',
+      redirect: 'home'
+    },
+    {
+      path: '/home',
+      component: Home
+    },
+    {
+      path: '/login',
+      component: Login
+    }
   // {
   //   path: '/about',
   //   name: 'about',
@@ -18,10 +28,5 @@ const routes = [
   //   // which is lazy-loaded when the route is visited.
   //   component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   // }
-]
-
-const router = new VueRouter({
-  routes
+  ]
 })
-
-export default router
