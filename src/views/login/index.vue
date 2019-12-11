@@ -76,6 +76,7 @@ export default {
       // validate 是一个方法=>方法传入的函数 两个函数 第一个是是否校验成功/第二个未校验成功字段
       this.$refs.myForm.validate((isOK) => {
         if (isOK) {
+          // 只有一切校验成功之后才能请求
           this.$axios({
             method: 'post',
             url: 'authorizations',
@@ -83,8 +84,12 @@ export default {
           }).then(result => {
             // 将后台返回的token令牌存储到前端缓存中
             window.localStorage.setItem('user-token', result.data.data.token)
-          }).catch(error => {
-            console.log(error.message)
+            this.$router.push('/home')
+          }).catch(() => {
+            this.$message({
+              type: 'warning',
+              message: '您的手机号或验证码错误'
+            })
           })
         }
       })
