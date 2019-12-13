@@ -8,7 +8,7 @@
       text-color="#adafb5"
       active-text-color="#ffd04b">
       <!-- ------------------首页-------------------------- -->
-      <el-menu-item index="1">
+      <el-menu-item>
           <!-- i为图标 -->
         <i class="el-icon-s-home"></i>
         <span slot="title">首页</span>
@@ -64,5 +64,5 @@ export default {
             height: 30px;
           }
        }
-   }
+    }
 </style>

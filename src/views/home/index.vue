@@ -1,13 +1,17 @@
 <template>
 <!-- 先定义一个大容器 -->
   <el-container>
-    <el-aside>
+    <!-- 左侧 -->
+    <el-aside style="width:200px">
        <layout-aside></layout-aside>
     </el-aside>
     <!-- 右侧大容器 -->
     <el-container>
       <!-- 头部 -->
-      <el-header>头部</el-header>
+      <el-header>
+        <!-- 头部组件 -->
+        <layout-header>我是头部</layout-header>
+      </el-header>
       <!-- 中部区域 -->
       <el-main>
         <!-- 二级路由容器 -->
@@ -19,9 +23,11 @@
 
 <script>
 import layoutAside from '../../components/home/layout-aside'
+import layoutHeader from '../../components/home/layout-header'
 export default {
   components: {
-    'layoutAside': layoutAside
+    'layoutAside': layoutAside,
+    'layoutHeader': layoutHeader
   }
 }
 </script>
