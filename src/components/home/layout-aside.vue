@@ -35,10 +35,10 @@
           <i class="el-icon-s-custom"></i>
           <span>粉丝管理</span>
         </template>
-          <el-menu-item>图文数据</el-menu-item>
-          <el-menu-item>粉丝概况</el-menu-item>
-          <el-menu-item>粉丝画像</el-menu-item>
-          <el-menu-item>粉丝列表</el-menu-item>
+          <el-menu-item index="/home/gradata">图文数据</el-menu-item>
+          <el-menu-item index="/home/fanpro">粉丝概况</el-menu-item>
+          <el-menu-item index="/home/fanpic">粉丝画像</el-menu-item>
+          <el-menu-item index="/home/fanlist">粉丝列表</el-menu-item>
       </el-submenu>
       <!-- -----------------------账户信息---------------------------------------------- -->
        <el-menu-item index="/home/material">
@@ -58,7 +58,6 @@ export default {
 
 <style lang='less' scoped>
    .layout-aside {
-       background-color: #323745;
        height:100vh;
        width: 200px;
        .title {
