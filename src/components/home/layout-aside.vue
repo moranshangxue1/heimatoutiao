@@ -3,12 +3,16 @@
     <div class="title">
         <img src="../../assets/logo_admin.png" alt="">
     </div>
+    <!-- el-menu = router属性为true时，启动路由 -->
+    <!-- :router= "true" 等价 router -->
     <el-menu
+      router
+      style= "width:201px"
       background-color="#353b4e"
       text-color="#adafb5"
       active-text-color="#ffd04b">
       <!-- ------------------首页-------------------------- -->
-      <el-menu-item>
+      <el-menu-item index="/home">
           <!-- i为图标 -->
         <i class="el-icon-s-home"></i>
         <span slot="title">首页</span>
@@ -19,12 +23,13 @@
           <i class="el-icon-s-order"></i>
           <span>内容管理</span>
         </template>
-          <el-menu-item>发布文章</el-menu-item>
-          <el-menu-item>内容列表</el-menu-item>
-          <el-menu-item>评论列表</el-menu-item>
-          <el-menu-item>素材管理</el-menu-item>
+          <el-menu-item index="/home/publish">发布文章</el-menu-item>
+          <el-menu-item index="/home/articles">内容列表</el-menu-item>
+          <el-menu-item index="/home/comment">评论列表</el-menu-item>
+          <el-menu-item index="/home/material">素材管理</el-menu-item>
       </el-submenu>
       <!-- ----------------------粉丝管理-------------------------------- -->
+      <!-- title插槽时 submenu 中显示一级内容 -->
       <el-submenu index="3">
         <template slot="title">
           <i class="el-icon-s-custom"></i>
@@ -36,7 +41,7 @@
           <el-menu-item>粉丝列表</el-menu-item>
       </el-submenu>
       <!-- -----------------------账户信息---------------------------------------------- -->
-       <el-menu-item index="4">
+       <el-menu-item index="/home/material">
           <!-- i为图标 -->
         <i class="el-icon-s-tools"></i>
         <span slot="title">账户信息</span>

@@ -51,7 +51,8 @@ export default {
     // 公共点击事件
     commonClick (key) {
       if (key === 'account') {
-        // 账户信息
+        // 跳转到 账户信息
+        this.$router.push('/home/account')
       } else if (key === 'git') {
       //  去项目的git地址
         window.location.href = 'https://github.com/love-cong/heimatoutiao'
