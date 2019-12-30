@@ -41,7 +41,7 @@
           <el-menu-item index="/home/fanlist">粉丝列表</el-menu-item>
       </el-submenu>
       <!-- -----------------------账户信息---------------------------------------------- -->
-       <el-menu-item index="/home/material">
+       <el-menu-item index="/home/account">
           <!-- i为图标 -->
         <i class="el-icon-s-tools"></i>
         <span slot="title">账户信息</span>

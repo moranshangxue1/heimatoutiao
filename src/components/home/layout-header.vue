@@ -9,7 +9,7 @@
     <!-- ------------------右侧-------------------------- -->
     <el-col :span="3.4">
         <!-- 用户头像 -->
-        <img class="head-img" :src="userInfo.photo ? userInfo.photo :defaultImg " alt="">
+        <img class="head-img" :src="!userInfo.photo ? userInfo.photo :defaultImg " alt="">
         <!-- 下拉菜单组件 el-dropdown -->
         <!-- command事件 -->
         <el-dropdown trigger="click" @command="commonClick">
@@ -33,22 +33,20 @@
 export default {
   data () {
     return {
-      userInfo: {},
+      userInfo: {}, // 个人信息对象
       defaultImg: require('../../assets/avatar.jpg') // 转成base64
     }
   },
   methods: {
-    //   获取用户个人资料
+    //  getUseInfo 获取用户个人资料
     getUseInfo () {
-      let token = window.localStorage.getItem('useer-token')
       this.$axios({
-        url: '/user/profile',
-        headers: { 'Authorization': `Bearer ${token}` }
+        url: '/user/profile'
       }).then(result => {
         this.userInfo = result.data.data // 接收数据对象
       })
     },
-    // 公共点击事件
+    // commonClick公共点击事件
     commonClick (key) {
       if (key === 'account') {
         // 跳转到 账户信息
@@ -58,7 +56,7 @@ export default {
         window.location.href = 'https://github.com/love-cong/heimatoutiao'
       } else {
       // 退出
-        window.location.clear() // 只能清除本项目的所有前端缓存
+        window.localStorage.clear() // 只能清除本项目的所有前端缓存
         this.$router.push('/login')// 跳转到登录页
       }
     }
